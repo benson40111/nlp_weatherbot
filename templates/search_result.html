@@ -1,0 +1,55 @@
+{% extends "course_base.html" %}
+{% block content %}
+<table class="highlight centered">
+    <thead>
+        <tr>
+            <th>課成編號</th>
+            <th>課程名稱</th>
+            <th>必選修</th>
+            <th>開課老師</th>
+            <th>班別</th>
+            <th>年級</th>
+            <th>星期</th>
+            <th>時間</th>
+            <th>教室</th>
+        </tr>
+    </thead>
+    {% for x in search_result %}
+    <tbody>
+        <tr>
+            <td>{{ x.course_id }}</td>
+            <td>{{ x.name }}</td>
+            <td>{{ x.course_category }}</td>
+            <td>
+                {% for y in x.teacher %}
+                {{ y }}
+                {% endfor %}
+            </td>
+            <td>
+                {% for y in x.classes %}
+                {{ y }}
+                {% endfor %}
+            </td>
+            <td>{{ x.grade }}</td>
+            <td>
+                {% for y in x.week %}
+                {{ y + "," }}
+                {% endfor %}
+            </td>
+            <td>
+                {% for y in x.time %}
+                {% for z in y %}
+                {{ z }}
+                {% endfor %}
+                <span>/</span>
+                {% endfor %}
+            </td>
+            <td>
+                {% for y in x.classroom %}
+                {{ y }}
+                {% endfor %}
+            </td>
+        </tr>
+    </tbody>
+    {% endfor %}
+{% endblock %}
