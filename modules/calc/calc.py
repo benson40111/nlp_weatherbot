@@ -13,29 +13,33 @@ class Calc():
                 c += x
         if (c[0] == '十'):
             c = '一' + c[0:]
-        number = ''
-        flag = True
-        for x in c:
-            if (x in dicts.digit):
-                flag = False
-                break
-
-        if (flag):
-            for x in c:
-                number += dicts.num[x]
-            return int(number)
+        
+        if (c.isdigit()):
+            return int(c)
         else:
-            amount = 0
-            for ch in c:
-                number = numeric(ch)
-                if number < 10:
-                    digit = number
-                else:
-                    amount = (amount + digit) * number if number > amount else amount + digit * number 
-                    digit = 0
-            if len(c) > 1 and numeric(c[-2]) != 0:
-                return int(amount + digit * numeric(c[-2]) / 10)
-            return int(amount + digit)
+            number = ''
+            flag = True
+            for x in c:
+                if (x in dicts.digit):
+                    flag = False
+                    break
+
+            if (flag):
+                for x in c:
+                    number += dicts.num[x]
+                return int(number)
+            else:
+                amount = 0
+                for ch in c:
+                    number = numeric(ch)
+                    if number < 10:
+                        digit = number
+                    else:
+                        amount = (amount + digit) * number if number > amount else amount + digit * number 
+                        digit = 0
+                if len(c) > 1 and numeric(c[-2]) != 0:
+                    return int(amount + digit * numeric(c[-2]) / 10)
+                return int(amount + digit)
     def process(self):
         try:
             math_bot = ChatBot(

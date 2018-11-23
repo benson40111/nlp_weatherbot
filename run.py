@@ -52,7 +52,7 @@ def get():
         print(speech)
         if (speech):
             speech = Webhook().send_message(speech)
-            if (speech[0:4] == 'http'):
+            if (speech[0:10] == 'http://140'):
                 return_text = { 'text':'您所查詢的課程資料如下：\n', 'url':speech }
             elif (speech[0:5] == 'https'):
                 return_text = { 'text':'對不起我聽不懂，我幫您去查詢google的結果如下：\n', 'url':speech }
@@ -64,5 +64,5 @@ def get():
         return jsonify(return_text)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080, debug=True)
 

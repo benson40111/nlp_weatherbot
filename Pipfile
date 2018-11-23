@@ -9,7 +9,6 @@ python_version = "3.5"
 [packages]
 flask = "*"
 mongoengine = "*"
-jieba = "*"
 chatterbot = "*"
 
 [dev-packages]
