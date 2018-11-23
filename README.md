@@ -6,17 +6,16 @@ You can ask weather, yuntech course and easy calculate.
 If you ask other questions, system will response a google search link to you.
 
 ## Based on
-+ Python
-+ DialogFlow
++  [Python](https://www.python.org/)
++  [Dialogflow](https://dialogflow.com/)
++  [pipenv](https://github.com/pypa/pipenv)
 
 ## Plugins
-+ Flask
-+ Chatterbot
-+ request
-+ mongoengine
-+ requests
++  [flask](https://github.com/pallets/flask)
++  [ChatterBot](https://github.com/gunthercox/ChatterBot)
++  [mongoengine](https://github.com/MongoEngine/mongoengine)
 
 ## FlowChart
-![nlp_project](https://user-images.githubusercontent.com/12606340/48925066-a9a1fb80-eefa-11e8-8657-51dacdd402ef.png)
+![nlp_project 1](https://user-images.githubusercontent.com/12606340/48934379-bd6f5100-ef3e-11e8-9732-91ccb33707c2.png)
 
 ## How to use
