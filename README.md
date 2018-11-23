@@ -1,4 +1,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3a1190860c704585a6ed5cf78432bab1)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=benson40111/nlp_project&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.com/benson40111/nlp_project.svg?token=QFfTxqy7R93Bb7djst3q&branch=master)](https://travis-ci.com/benson40111/nlp_project)
 ## Introduction
 It's a Undergraduate independent study project.
 Get text from server then process that.
