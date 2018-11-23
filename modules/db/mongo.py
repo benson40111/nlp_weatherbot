@@ -1,4 +1,4 @@
-from mongoengine import Document, IntField,ListField,StringField, connect
+from mongoengine import Document, ListField, StringField, connect
 connect('course')
 
 class Course(Document):

@@ -1,11 +1,9 @@
 from chatterbot import ChatBot
 from unicodedata import numeric
 import modules.calc.dict as dicts
-
 class Calc(): 
     def __init__(self, querry):
         self.querry = querry
-        
     def chinese2num(self, s):
         c = ''
         for x in s:
@@ -13,9 +11,14 @@ class Calc():
                 c += x
         if (c[0] == '十'):
             c = '一' + c[0:]
-        
         number = ''
-        if (c not in dicts.digit):
+        flag = True
+        for x in c:
+            if (x in dicts.digit):
+                flag = False
+                break
+
+        if (flag):
             for x in c:
                 number += dicts.num[x]
             return int(number)
@@ -31,7 +34,6 @@ class Calc():
             if len(c) > 1 and numeric(c[-2]) != 0:
                 return int(amount + digit * numeric(c[-2]) / 10)
             return int(amount + digit)
-
     def process(self):
         try:
             math_bot = ChatBot(

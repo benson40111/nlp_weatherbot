@@ -5,25 +5,24 @@ class Weather():
     def __init__(self, county, town):
         self.county = county
         self.town = town
-    
     def askweather(self):
         with open('./city.json', 'r') as f:
-            id = json.load(f)
+            city_id = json.load(f)
 
-        for x in id:
+        for x in city_id:
             if (self.town):
                 for y in x['towns']:
                     if (self.town == y['name']):
-                        id = y['id']
+                        city_id = y['id']
                         break
             else:
                 if (self.county == x['name']):
-                    id = x['id']
+                    city_id = x['id']
                     break
-        return self.get_weather(id)
+        return self.get_weather(city_id)
     
-    def get_weather(self, id):
-        text = requests.get('https://works.ioa.tw/weather/api/weathers/'+id+'.json').json()
+    def get_weather(self, city_id):
+        text = requests.get('https://works.ioa.tw/weather/api/weathers/'+city_id+'.json').json()
         weather = text['desc']
         temp = str(text['temperature'])
         at = text['at']

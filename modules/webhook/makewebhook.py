@@ -1,5 +1,5 @@
 import requests
-from flask import request, jsonify
+from flask import jsonify
 from modules.weather.get_weather import Weather
 from modules.calc.calc import Calc
 from urllib.parse import quote
@@ -59,9 +59,8 @@ class Webhook():
             querry = quote(querry)
             self.speech = 'https://www.google.com/search?q=' + querry
         return self.speech
-    
     def return_json(self):
-        self.speech_json = {'speech':self.get_message(), 'source':'agent'}
+        self.speech_json = {'speech':self.get_message(req), 'source':'agent'}
         return jsonify(self.speech_json)
     
     def send_message(self, message):
@@ -75,7 +74,6 @@ class Webhook():
         header = {'Authorization':self.__key, 'content-type':'application/json;charset=UTF-8'}
         req = requests.post('https://api.dialogflow.com/v1/query?v=20150910', json=data, headers=header)
         text = self.get_message(req)
-        print(text)
         if (text):
             return text
         else:

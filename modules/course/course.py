@@ -1,5 +1,4 @@
 from modules.db.mongo import Course 
-
 class Search_Course():
     def __init__(self, department, category, grade, week, time):
         self.department = department
@@ -26,10 +25,8 @@ class Search_Course():
         if (time_list):
             search_dict['time'] = {
                 '$elemMatch': {
-                    '$elemMatch': { 
-                        '$in': time_list
-                        }
-                    }
+                    '$elemMatch': { '$in': time_list }
                 }
+            }
         search_result = Course.objects(__raw__=search_dict).all()
         return search_result

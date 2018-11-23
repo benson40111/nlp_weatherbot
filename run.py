@@ -1,6 +1,4 @@
-from flask import Flask, render_template, request, abort, redirect, url_for, jsonify
-
-import requests
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 from modules.db.mongo import Course
 from modules.webhook.makewebhook import Webhook
@@ -14,6 +12,7 @@ def index():
     category = request.args.get('category')
     grade = request.args.get('grade')
     week = request.args.get('week')
+    return_all = None
     if (request.args.get('time')):
         time = request.args.get('time').split(',')
     else:
@@ -36,6 +35,7 @@ def insert():
 @app.route('/send', methods=['POST', 'GET'])
 def send():
     if (request.method == 'POST'):
+        text = ''
         search_str = request.form['search']
         if (search_str):
             text = Webhook().send_message(search_str)
@@ -64,5 +64,5 @@ def get():
         return jsonify(return_text)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080)
 
