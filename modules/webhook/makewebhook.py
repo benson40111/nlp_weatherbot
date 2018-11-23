@@ -48,6 +48,11 @@ class Webhook():
             elif (intentName == 'askcalc'):
                 querry = result.get('resolvedQuery')
                 self.speech = Calc(querry).process()
+
+            else:
+                querry = result.get('resolvedQuery')
+                querry = quote(querry)
+                self.speech = 'https://www.google.com/search?q=' + querry
         except Exception as err:
             print(err)
             querry = result.get('resolvedQuery')
@@ -70,7 +75,8 @@ class Webhook():
         header = {'Authorization':self.__key, 'content-type':'application/json;charset=UTF-8'}
         req = requests.post('https://api.dialogflow.com/v1/query?v=20150910', json=data, headers=header)
         text = self.get_message(req)
+        print(text)
         if (text):
             return text
         else:
-            return '對不起 請再說一次'
+            return '對不起 我沒收到訊息 請再說一次'

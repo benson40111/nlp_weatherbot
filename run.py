@@ -49,7 +49,7 @@ def send():
 def get():
     if (request.method == 'GET'):
         speech = request.args.get('speech')
-        print(seeech)
+        print(speech)
         if (speech):
             speech = Webhook().send_message(speech)
             if (speech[0:4] == 'http'):
