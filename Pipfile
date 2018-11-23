@@ -10,5 +10,6 @@ python_version = "3.5"
 flask = "*"
 mongoengine = "*"
 chatterbot = "*"
+pytest = "*"
 
 [dev-packages]
