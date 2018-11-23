@@ -3,8 +3,7 @@ python:
     - '3.5'
 install:
     - 'pip install pipenv'
-    - 'pipenv sync'
-script: 'python -m pytest --cov=pyblizzard tests --cov-report=xml'
-after_success:
-      - 'python-codacy-coverage -r coverage.xml'
+    - 'pipenv install'
+    - 'pipenv run python run.py'
+script: pytest
 
