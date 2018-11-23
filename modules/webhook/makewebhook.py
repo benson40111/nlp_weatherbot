@@ -62,7 +62,6 @@ class Webhook():
     def return_json(self):
         self.speech_json = {'speech':self.get_message(req), 'source':'agent'}
         return jsonify(self.speech_json)
-    
     def send_message(self, message):
         data = {
                 'lang': 'zh-TW',

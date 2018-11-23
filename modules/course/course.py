@@ -1,4 +1,5 @@
-from modules.db.mongo import Course 
+from modules.db.mongo import Course
+
 class Search_Course():
     def __init__(self, department, category, grade, week, time):
         self.department = department

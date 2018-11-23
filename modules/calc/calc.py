@@ -1,9 +1,11 @@
 from chatterbot import ChatBot
 from unicodedata import numeric
 import modules.calc.dict as dicts
-class Calc(): 
+
+class Calc():
     def __init__(self, querry):
         self.querry = querry
+    @classmethod
     def chinese2num(self, s):
         c = ''
         for x in s:
@@ -29,7 +31,7 @@ class Calc():
                 if number < 10:
                     digit = number
                 else:
-                    amount = (amount + digit) * number if number > amount else amount + digit * number         
+                    amount = (amount + digit) * number if number > amount else amount + digit * number 
                     digit = 0
             if len(c) > 1 and numeric(c[-2]) != 0:
                 return int(amount + digit * numeric(c[-2]) / 10)

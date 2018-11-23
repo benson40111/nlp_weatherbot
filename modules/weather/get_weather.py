@@ -20,7 +20,6 @@ class Weather():
                     city_id = x['id']
                     break
         return self.get_weather(city_id)
-    
     def get_weather(self, city_id):
         text = requests.get('https://works.ioa.tw/weather/api/weathers/'+city_id+'.json').json()
         weather = text['desc']
