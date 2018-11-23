@@ -5,5 +5,5 @@ install:
     - 'pip install pipenv'
     - 'pipenv install'
     - 'pipenv run python run.py'
-script: pytest
+script: pipenv run py.test -s -q
 
