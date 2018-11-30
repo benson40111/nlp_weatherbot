@@ -20,7 +20,8 @@ class Webhook():
             if (intentName == 'askweather'):
                 county = parameters.get('weatherlocation')
                 town = parameters.get('weatherTown')
-                self.speech = str(Weather(county, town))
+                date = parameters.get('date')
+                self.speech = str(Weather(county, town, date))
             elif (intentName == 'askcourse'):
                 department = parameters.get('coursedepartement')
                 category = parameters.get('coursecategory')
