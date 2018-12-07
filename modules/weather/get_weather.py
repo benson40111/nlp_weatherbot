@@ -37,7 +37,8 @@ class Weather():
             speech = self.town + '目前天氣為' + weather + ' 溫度為' + temp + '度' + '\n' + '更新時間:' + at + '\n' + '溼度為' + humidity + '%' + '\n' + '降雨機率為' + rainfall
         else:
             speech = self.county + '目前天氣為' + weather + ' 溫度為' + temp + '度' + '\n' + '更新時間:' + at + '\n' + '溼度為' + humidity + '%' + '\n' + '降雨機率為' + rainfall
-        speech += ' 目前只能查詢當下天氣喔'
+        speech += ' 目前只能查詢當下天氣喔' + '\n' + '資料來源：https://works.ioa.tw/weather/api/weathers/'
+
         return speech
 
     def __str__(self):
