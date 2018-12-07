@@ -11,5 +11,6 @@ flask = "*"
 mongoengine = "*"
 chatterbot = "*"
 pytest = "*"
+flask-paginate = "*"
 
 [dev-packages]

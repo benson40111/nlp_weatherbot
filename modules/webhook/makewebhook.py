@@ -28,7 +28,7 @@ class Webhook():
                 grade = parameters.get('coursegrade')
                 week = parameters.get('courseweek')
                 time = parameters.get('coursetime')
-                self.speech = 'http://140.125.45.147:8080/?'
+                self.speech = 'https://vawsr.mino.tw/nlp?'
                 if department:
                     self.speech += 'department=' + department + '&'
                 if category:

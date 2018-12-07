@@ -49,6 +49,15 @@ class Calc():
 
             cut = []
             text = ''
+            tmp = self.querry.split()
+            self.querry = ''
+            for x in tmp:
+                if (x in dicts.operand):
+                    self.querry += dicts.operand[x]
+                else:
+                    self.querry += x
+            
+            print(self.querry)
             for i, x in enumerate(self.querry):
                 if (x in dicts.ops):
                     num = self.chinese2num(text)
