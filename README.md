@@ -22,3 +22,18 @@ If you ask other questions, system will response a google search link to you.
 ![nlp_project 1](https://user-images.githubusercontent.com/12606340/48934379-bd6f5100-ef3e-11e8-9732-91ccb33707c2.png)
 
 ## How to use
+First time we need install plugins in pipenv.
+```
+$ pipenv install
+```
+Running and test project in pipenv.
+```
+$ pipenv run python run.py
+```
+Go to your localhost 8080 port to see demo.
+
+Now you can try something speech in url like:
+your_localhost/get?speech=一加上一等於多少
+or
+your_localhost/get?speech=資工系大三選修有哪些
+and you will get a json file, that is the result.
