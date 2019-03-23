@@ -33,7 +33,11 @@ $ pipenv run python run.py
 Go to your localhost 8080 port to see demo.
 
 Now you can try something speech in url like:
+
 your_localhost/get?speech=一加上一等於多少
-or
+
+or this
+
 your_localhost/get?speech=資工系大三選修有哪些
+
 and you will get a json file, that is the result.
