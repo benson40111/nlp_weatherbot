@@ -5,7 +5,7 @@ from modules.calc.calc import Calc
 from urllib.parse import quote
 
 # Using dialogflow api
-with open('api_key', 'r') as f:
+with open('modules/webhook/api_key', 'r') as f:
     api_key = f.read()
 
 class Webhook():
