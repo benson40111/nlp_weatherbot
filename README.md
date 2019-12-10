@@ -40,6 +40,6 @@ your_localhost/get?speech=資工系大三選修有哪些
 and you will get a json file, that is the result.
 
 ## Thanks
+[Weather API](https://works.ioa.tw/weather/api/doc/index.html)<br>
 Thanks this great weather api that help me done my graduation project
-[Weather API](https://works.ioa.tw/weather/api/doc/index.html)
 
