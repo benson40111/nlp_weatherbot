@@ -18,9 +18,6 @@ If you ask other questions, system will response a google search link to you.
 +  [pytest](https://github.com/pytest-dev/pytest/)
 +  [flask-paginate](https://github.com/lixxu/flask-paginate)
 
-## FlowChart
-![nlp_project 1](https://user-images.githubusercontent.com/12606340/48934379-bd6f5100-ef3e-11e8-9732-91ccb33707c2.png)
-
 ## How to use
 First time we need install plugins in pipenv.
 ```
