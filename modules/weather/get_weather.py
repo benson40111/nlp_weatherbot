@@ -1,3 +1,8 @@
+'''
+weather data is come from
+https://works.ioa.tw/weather/api/doc/index.html
+'''
+
 import json
 import requests
 from datetime import date

@@ -4,12 +4,16 @@ from modules.weather.get_weather import Weather
 from modules.calc.calc import Calc
 from urllib.parse import quote
 
+# Using dialogflow api
+with open('api_key', 'r') as f:
+    api_key = f.read()
+
 class Webhook():
     def __init__(self):
         self.req = None
         self.speech = ''
         self.speech_json = None
-        self.__key = 'Bearer 20920efb608a490d9989e6d48286cc22'
+        self.__key = api_key
 
     def get_message(self, req):
         try:
@@ -28,7 +32,7 @@ class Webhook():
                 grade = parameters.get('coursegrade')
                 week = parameters.get('courseweek')
                 time = parameters.get('coursetime')
-                self.speech = 'https://vawsr.mino.tw/nlp?'
+                self.speech = 'localhost:8080/'
                 if department:
                     self.speech += 'department=' + department + '&'
                 if category:
